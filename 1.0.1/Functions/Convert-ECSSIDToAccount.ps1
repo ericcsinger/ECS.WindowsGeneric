@@ -87,8 +87,8 @@
                 {
                 $Exception = $_.Exception 
                 Write-Verbose "We had an exception looking up the SID, see below for the message"
-                Write-Verbose "$($Exception.Message)" 
-                Write-Verbose "Failed to convert $Object to AccountName"
+                Write-error "$($Exception.Message)" 
+                Write-error "Failed to convert $Object to AccountName"
 
                 New-Object PSObject -Property @{
                     NTAccount = "SID lookup failed"
